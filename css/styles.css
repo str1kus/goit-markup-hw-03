@@ -58,7 +58,7 @@ address {
   font-style: normal;
 }
 
-.border {
+.header {
   border-bottom: 1px solid #ececec;
 }
 
@@ -70,6 +70,11 @@ address {
   padding-right: 15px;
 }
 
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
 /* Navigation */
 
 .main-nav {
@@ -79,14 +84,11 @@ address {
 
 .site-nav {
   display: flex;
-}
-
-.site-nav .item:not(:last-child) {
-  margin-right: 50px;
-}
-
-.site-nav {
   margin-left: 93px;
+}
+
+.site-nav .item:not(:first-child) {
+  margin-left: 50px;
 }
 
 .logo {
@@ -127,8 +129,8 @@ address {
   margin-left: auto;
 }
 
-.nav-contacts .item:not(:last-child) {
-  margin-right: 50px;
+.nav-contacts .item:not(:first-child) {
+  margin-left: 50px;
 }
 
 .nav-contacts .link {
@@ -144,16 +146,12 @@ address {
   color: var(--accent-color);
 }
 
-.section {
-  padding-top: 94px;
-  padding-bottom: 94px;
-}
-
-.section-feat {
-  padding-top: 94px;
-}
-
 /*Hero*/
+.hero {
+  background-color: var(--secondary-bg-color);
+  text-align: center;
+  padding: 200px 0;
+}
 
 .visually-hidden {
   position: absolute;
@@ -168,12 +166,11 @@ address {
   overflow: hidden;
 }
 
-.hero.centered {
-  text-align: center;
-}
-
 .hero-title {
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 30px;
+  width: 696px;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -207,11 +204,11 @@ address {
 
 .features {
   display: inline-flex;
-  justify-content: space-between;
+  gap: 30px;
 }
 
-.features .item:not(:last-child) {
-  margin-right: 30px;
+.features .item {
+  flex-basis: 270px;
 }
 
 .section-title {
@@ -236,31 +233,53 @@ address {
 }
 
 /*Do*/
+.about {
+  padding-top: 0;
+}
 
-.do {
+.about-do {
   display: flex;
-  justify-content: space-between;
+}
+
+.about-do .item {
+  width: calc((100% - 60px) / 3);
+  margin-right: 30px;
+}
+
+.about-do .item:nth-child(3n) {
+  margin-right: 0;
 }
 
 /*Team*/
 
 .team {
+  background-color: var(--section-color);
+}
+
+.section-team {
   display: flex;
 }
 
-.team .item:not(:last-child) {
+.section-team .item {
+  width: calc((100% - 60px) / 3);
   margin-right: 30px;
 }
 
-.card {
-  width: 270px;
+.section-team .item:last-child {
+  margin-right: 0;
+}
+
+.team-card {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
 
-.card-title {
-  padding-top: 30px;
+.team-textwrapper {
+  padding: 30px 0;
+}
+
+.team-textwrapper .title {
   padding-bottom: 10px;
   margin-bottom: 0;
   font-weight: var(--medium-font-weight);
@@ -270,8 +289,7 @@ address {
   text-align: center;
 }
 
-.card-text {
-  padding-bottom: 30px;
+.team-textwrapper .text {
   margin-bottom: 0;
   font-size: var(--secondary-font-size);
   line-height: 1.19;
@@ -280,22 +298,22 @@ address {
 
 /* Footer */
 
-.paddings {
-  padding-top: 60px;
-  padding-bottom: 51px;
-}
-
-.foot-block .block {
-  display: block;
+.footer {
+  background-color: var(--secondary-bg-color);
+  padding: 60px 0;
 }
 
 .logo-footer {
-  color: var(--primary-white-color);
+  display: block;
   margin-bottom: 20px;
+  color: var(--primary-white-color);
+}
+
+.contacts .item:not(:last-child) {
+  margin-bottom: 9px;
 }
 
 .contacts .address {
-  margin-bottom: 9px;
   line-height: 1.5;
   color: var(--primary-white-color);
   text-decoration: none;
@@ -307,7 +325,6 @@ address {
 }
 
 .contacts .link {
-  margin-bottom: 9px;
   line-height: 1.5;
   color: var(--contacts-color);
   text-decoration: none;
@@ -360,34 +377,33 @@ address {
   background-color: var(--accent-color);
 }
 
-.flex-cards {
+.portfolio-cards {
   display: flex;
   flex-wrap: wrap;
 }
 
-.flex-cards .item {
+.portfolio-cards .item {
   width: calc((100% - 60px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
 }
 
-.flex-cards .item:nth-child(3n) {
+.portfolio-cards .item:nth-child(3n) {
   margin-right: 0;
 }
 
-.flex-cards .item:nth-last-child(-n + 3) {
+.portfolio-cards .item:nth-last-child(-n + 3) {
   margin-bottom: 0;
 }
 
-.portcard-body {
+.portcard-textwrapper {
+  padding: 20px 24px;
   border-left: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
 }
 
-.portcard-title {
-  padding-top: 20px;
-  padding-left: 24px;
+.portcard-textwrapper .title {
   padding-bottom: 4px;
   margin-bottom: 0;
   font-size: var(--third-font-size);
@@ -396,9 +412,7 @@ address {
   letter-spacing: 0.06em;
 }
 
-.portcard-text {
-  padding-left: 24px;
-  padding-bottom: 20px;
+.portcard-textwrapper .text {
   margin-bottom: 0;
   font-size: var(--secondary-font-size);
   line-height: 1.88;
